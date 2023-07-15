@@ -1,1 +1,36 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center text-dark mt-5">Admin Login</h2>
+        <div class="text-center mb-5 text-dark">Enter your login credentials!</div>
+        <div class="card my-5">
 
+          <form class="card-body cardbody-color p-lg-5" >
+            <div class="text-center">
+              <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile"> 
+            </div>
+
+            <div class="mb-3">
+                <input type="text" class="form-control"name="username" [(ngModel)]="username" id="username" aria-describedby="emailHelp"placeholder="User Name" required ngModel >
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" [(ngModel)]="password" id="password" placeholder="password"  required minlength="5" maxlength="10"ngModel>
+                <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>  -->
+              </div>
+              <br>
+              <br>
+              <div class="text-center">
+                  <button type="submit" class="btn btn-outline-warning px-5 mb-5 w-100" (click)="checkAdminLogin()">Login</button>
+                   <button type="button" class="btn btn-success px-5 mb-5 w-100" routerLink="" routerLinkActive="active">Home Page</button>
+              </div>
+              <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
+                Admin? Are you a learner? 
+                <a href="/learners" class="text-dark fw-bold">Join as Learner</a></div>
+            </form>
+          </div>
+  
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
