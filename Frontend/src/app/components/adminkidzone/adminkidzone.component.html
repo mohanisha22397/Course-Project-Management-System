@@ -1,1 +1,88 @@
+<app-adminpanel2></app-adminpanel2>
+
+<div class="main">
+    <h1 style="text-align:center;"><span>KidZone</span></h1><br><br>
+    <!-- <p style="text-align:center;"> This section includes the kidzone programs provided by SkillForge!!</p> -->
+
+<div  style="margin: 30px;margin-left: 30px; float: left; width: 280px;">
+<button  class="button" (click)="div1Function()">Total KidZone Programs</button>
+</div>
+
+<div  style="margin: 30px; float: left; width: 75px;">
+<button  class="button" (click)="div2Function()">Add</button>
+</div>
+
+<!-- <div style="margin: 30px; float: left; width: 110px;">
+<button  class="button" (click)="div3Function()">Update</button>
+</div> -->
+
+<div style="margin: 30px; float: left; width: 100px;">
+<button  class="button" (click)="div3Function()">Delete</button>
+</div>
+
+<div style="margin: 30px; float: left; width: 80px;">
+<button  class="button" (click)="div4Function()">Hide</button>
+</div><br><br><br><br>
+
+<div *ngIf="div1">
+    <div class="container" style="background-color:white; padding: 8px 15px 15px 15px; border-radius: 15px;width:500px ;">
+      <h2 style="text-align:center;color: red;">Total KidZone Programs</h2>
+          <table  cellspacing="15" style="width:100%" >
+          <tr>
+              <th style="width: 10px;">
+                 Sr.No.
+              </th>
+              <th>
+                 KidZone
+              </th>
+          </tr>
+
+      
+          <tr *ngFor="let log of loginpages">
+          
+              <td>{{log.id}}</td>
+              <td>{{log.kidzone}}</td>
+          </tr>
+  
+    </table>
+    </div><br><br>
+  </div>
+
+<div *ngIf="div2">
+  <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 500px;">
+  <h2 style="text-align:center;color: red;">Add KidZone Program</h2><br>
+<form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
+
+  <div class="form-outline" style="width: 70px;"> 
+  <label class="form-label" for="form2Example1">Sr.No.</label>
+  <input type="text" id="form2Example1" placeholder="sr.no." class="form-control" name="id" ngModel>
+</div>
+
+<div class="form-outline" style="width: 350px;"> 
+<label class="form-label" for="form2Example2" >KidZone Program</label>
+<input type="text" id="form2Example2" placeholder="kidzone" class="form-control" name="kidzone" ngModel>
+</div><br><br><br><br>
+  <button  class="button" type="submit" value="Insert" (click)="insertdetails(insertdata)" >Add </button><br>
+</form>
+  </div>
+</div>
+
+<div *ngIf="div3">
+    <div class="container" style="background-color:white; padding: 5px 5px 45px 5px; border-radius: 15px; width: 400px;">
+      <h2 style="text-align:center;color: red;">Delete KidZone Program</h2>
+      <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
+      <div class="form-outline" style="width: 200px;"> 
+      <label class="form-label" >Sr.No.</label>
+      <input type="text"  placeholder="sr.no." class="form-control" name="id" ngModel>
+      </div><br>
+      <button  class="button" type="submit" value="Delete" (click)="deleteLoginpage(data)" >Delete </button><br>
+      </form>
+    </div>
+</div>
+
+</div>
+
+
+
+
 
