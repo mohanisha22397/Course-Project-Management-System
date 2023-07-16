@@ -1,1 +1,219 @@
+<!-- <div class="container-fluid px-4"> -->
+  <!-- <h1 class="mt-4">Mentor Login</h1> -->
+  
+  <!-- <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Mentor Login</li>
+  </ol> -->
+  <header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Mentor Login</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Mentors/experts that guide and help the learners to expand their wings and soar high!! </p>
+        </div>
+        <br>
+        <br>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Robotics-IOT</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                      <button  class="btn btn-outline-light" (click)="div1Function()">Login</button>
+                        <!-- <a class="small text-white stretched-link" href="adminprojects.html" routerLink="/adminprojects" routerLinkActive="active">View Details</a> -->
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+          <div class="col-xl-3 col-md-6">
+              <div class="card bg-warning text-white mb-4">
+                  <div class="card-body">Electronics</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                    <button type="button" class="btn btn-outline-light" (click)="div2Function()">Login</button>
+                      <!-- <a class="small text-white stretched-link" href="#admincourses">View Details</a> -->
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+              <div class="card bg-success text-white mb-4">
+                  <div class="card-body">Machine Learning</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                    <button type="button" class="btn btn-outline-light" (click)="div3Function()">Login</button>
+                      <!-- <a class="small text-white stretched-link" href="#adminworkshop">View Details</a> -->
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+              <div class="card bg-danger text-white mb-4">
+                  <div class="card-body">Web-Android App Development</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                    <button type="button" class="btn btn-outline-light" (click)="div4Function()">Login</button>  
+                    <!-- <a class="small text-white stretched-link" href="#adminkidzone">View Details</a> -->
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</header>
 
+
+     
+<div class="container-xxl py-5">
+    <!-- <div class="main"> -->
+      <!-- <h1 style="text-align:center;"><span>Mentor Login</span></h1><br><br><br>
+  
+  <div  style=" float:left; width: 50px;margin-right: 0px;">
+  <button  class="button" (click)="div1Function()">Robotics-IOT</button>
+  </div>
+  
+  <div  style=" float: left; width: 50px;margin-left:200px;">
+  <button  class="button" (click)="div2Function()">Electronics</button>
+  </div>
+  
+  <div style=" float: left; width: 50px;margin-left:400px;">
+  <button  class="button" (click)="div3Function()">Machine Learning</button>
+  </div>
+  
+  <div  style=" float: left; width: 50px;margin-left:600px;">
+    <button  class="button" (click)="div4Function()">Web-Android App Development</button>
+    </div>
+  
+  <br><br><br><br> -->
+  
+  <!-- <div style=" float: left; width: 50px;margin-left:785px;">
+  <button  class="button" (click)="div4Function()">Hide</button>
+  </div><br><br><br><br> -->
+  
+  <div *ngIf="div1">
+    <h2 style="text-align:center;" class="text-primary"><span>Robotics-IOT Mentor Login</span></h2> 
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+    <div class="container" style="background-color:white; padding: 25px; border-radius: 15px;">
+  <form #loginform= "ngForm" (ngSubmit)="loginFaculty1()">
+    <div class="form-outline mb-4">
+      <small class="text-danger">{{msg}}</small><br>
+      <label class="form-label" for="form2Example1">Email address</label>
+      <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="faculty.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+    </div>
+  
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2">Password</label>
+      <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="faculty.password">
+        <div *ngIf="password.invalid && password.touched">
+          <small class="text-danger">Password should not be blank</small>
+        </div>   
+    </div>
+  
+    <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+  </form>
+    </div>
+    </body>
+  </div>
+  
+  
+  <div *ngIf="div2">
+    <h2 style="text-align:center;" class="text-warning"><span>Electronics Mentor Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+    <div class="container" style="background-color:white; padding: 25px; border-radius: 15px;">
+  <form #loginform="ngForm" (ngSubmit)="loginFaculty2()">
+    <div class="form-outline mb-4">
+      <small class="text-danger">{{msg}}</small><br>
+      <label class="form-label" for="form2Example1">Email address</label>
+      <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="faculty.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+    </div>
+  
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2">Password</label>
+      <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="faculty.password">
+      <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+    </div>
+  
+    <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+  </form>
+    </div>
+    </body>
+  </div>
+  
+  <div *ngIf="div3">
+    <h2 style="text-align:center" class="text-success"><span>Machine Learning Mentor Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+    <div class="container" style="background-color:white; padding: 25px; border-radius: 15px;">
+  <form #loginform="ngForm" (ngSubmit)="loginFaculty3()">
+    <div class="form-outline mb-4">
+      <small class="text-danger">{{msg}}</small><br>
+      <label class="form-label" for="form2Example1">Email address</label>
+      <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="faculty.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+    </div>
+  
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2">Password</label>
+      <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="faculty.password">
+      <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+    </div>
+  
+    <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+  </form>
+    </div>
+    </body>
+  </div>
+  
+
+  <div *ngIf="div4">
+    <h2 style="text-align:center" class="text-danger"><span>Web-Android App Development Mentor Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+    <div class="container" style="background-color:white; padding: 25px; border-radius: 15px;">
+  <form #loginform="ngForm" (ngSubmit)="loginFaculty4()">
+    <div class="form-outline mb-4">
+      <small class="text-danger">{{msg}}</small><br>
+      <label class="form-label" for="form2Example1">Email address</label>
+      <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]= "faculty.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+    </div>
+  
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2">Password</label>
+      <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]= "faculty.password">
+      <div *ngIf= "password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+    </div>
+  
+    <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+  </form>
+    </div>
+    </body>
+  </div>
+  <!-- </div> -->
+  <!-- </div><br> -->
+  <h3 class="text-primary">We guide you through....</h3>
+  <p>Various topics and latest trends are brought to our learners as a treat for them. Our mentors provide their valuable assistance in multiple domains, suck as, IOT, Electronics, Machine Learning, Deep Learning, Data Analytics, Cyrptocurrency, Blockchain, Android App Development as well as Web Development, Robotics, and any more. Our mentors are highly educated jury who also help you with larning of new programming languages too.</p>
+  <div class="container text-center">
+    <!-- <div class="row align-items-center"> -->
+        <div class="gallery">
+            <img src="assets\img\mentor3.jpeg" alt="pic1"> 
+            <img src="assets\img\mentor2.jpeg" alt="pic6"> 
+            <img src="assets\img\mentor5.jpeg" alt="pic3">
+            <img src="assets\img\mentor4.jpeg" alt="pic5">
+            <img src="assets\img\mentor1.jpeg" alt="pic3">
+            <img src="assets\img\mentor6.jpeg" alt="pic5">
+        </div>
+  </div>
+  
+  <br>
+  <br>
+  
