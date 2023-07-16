@@ -1,1 +1,472 @@
+<header class="bg-success bg-opacity-25 py-5">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-dark">
+          <h1 class="display-3">Learners Login</h1>
+          <p class="lead fw-normal text-dark-50 mb-0">SkillForge: Your bestfriend in growth!!!Log in into tech and more!!! </p>
+      </div>
+      <div class="container text-center">
+      <div class="gallery">
+        <img src="assets\img\robo1.jpg" alt="pic1"> 
+        <img src="assets\img\robo4.jpg" alt="pic4"> 
+        <img src="assets\img\robo3.jpg" alt="pic3">
+        <img src="assets\img\robo2.jpg" alt="pic2">
+      </div>
+      <div class="titles">
+        <h3>Courses</h3>
+        <h3>Projects</h3>
+        <h3>Workshop</h3>
+        <h3>KidZone</h3>
+          
+       </div>
+    </div>
+    </div>
+  </header>
+      <br>
+      <br>
+      <h1 style="text-align:center;"><span> Course Login</span></h1>
+      <br>
+      <div class="container-fluid justify-content-center">
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-md-6">
+              <div class="card bg-warning text-dark fw-bold mb-4">
+                  <div class="card-body">Web Development</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                    <button  class="btn btn-outline-dark" (click)="div1Function()">Login</button>
+                      <!-- <a class="small text-white stretched-link" href="adminprojects.html" routerLink="/adminprojects" routerLinkActive="active">View Details</a> -->
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-warning text-dark fw-bold mb-4">
+                <div class="card-body">Android App Development</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                  <button type="button" class="btn btn-outline-dark" (click)="div2Function()">Login</button>
+                    <!-- <a class="small text-white stretched-link" href="#admincourses">View Details</a> -->
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-warning text-dark fw-bold mb-4">
+                <div class="card-body">Machine Learning</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                  <button type="button" class="btn btn-outline-dark" (click)="div3Function()">Login</button>
+                    <!-- <a class="small text-white stretched-link" href="#adminworkshop">View Details</a> -->
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-xl-3 col-md-6">
+            <div class="card bg-danger text-white mb-4">
+                <div class="card-body">Web-Android App Development</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                  <button type="button" class="btn btn-outline-light" (click)="div4Function()">Login</button>-->  
+                  <!-- <a class="small text-white stretched-link" href="#adminkidzone">View Details</a> -->
+                    <!-- <div class="small text-white"><i class="fas fa-angle-right"></i></div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> --> 
+    </div>
+  </div>
 
+
+
+
+
+<!-- <div class="container-xxl py-5">
+  <h1 class="display-3 text-center" id="head1">Learner Login </h1><br><br><br> -->
+
+     <!--<div  style=" float:left; width: 50px;margin-right: 0px;"> 
+      <button  class="button" (click)="div1Function()">Web Development</button>
+      </div>
+      
+      <div  style=" float: left; width: 50px;margin-left:300px;">
+      <button  class="button" (click)="div2Function()">Android App Development</button>
+      </div>
+      
+      <div style=" float: left; width: 50px;margin-left:600px;">
+      <button  class="button" (click)="div3Function()">Machine Learning</button>
+      </div><br><br><br><br> 
+      
+       <div style=" float: left; width: 50px;margin-left:785px;">
+      <button  class="button" (click)="div4Function()">Hide</button>
+      </div><br><br><br><br>-->
+
+      <!-- Course -->
+      <!-- <h1 style="text-align:center;"><span> Course Login</span></h1>
+      <br>
+      
+      <div class="d-flex justify-content-center">
+        <div class="btn-group btn-group-lg  " role="group" aria-label="Large button group">
+          <button type="button" class="btn btn-outline-secondary"(click)="div1Function()">Web Development</button>
+          <button type="button" class="btn btn-outline-secondary"(click)="div2Function()">Android App Development</button>
+          <button type="button" class="btn btn-outline-secondary"(click)="div3Function()">Machine Learning</button>
+        </div>
+    </div> -->
+      <div *ngIf="div1">
+    <h2 style="text-align:center;" class="text-warning"><span>Web Development Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+      <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+  <form #loginform="ngForm" (ngSubmit)="loginUser1()">
+      <div class="form-outline mb-4">
+          <small class="text-danger">{{msg}}</small><br>
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+      </div>
+  
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+        <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+      </div>
+      <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <br><br>
+      <div class="text-center">
+        <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+           Sign Up
+        </button></h6>
+      </div>
+    </form>
+      </div>
+    </body>
+  </div>
+  
+  <div *ngIf="div2">
+    <h2 style="text-align:center;" class="text-warning"><span>Android App Development Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+      <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+  <form #loginform="ngForm" (ngSubmit)="loginUser2()">
+      <div class="form-outline mb-4">
+          <small class="text-danger">{{msg}}</small><br>
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+      </div>
+  
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+        <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+      </div>
+      <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <br><br>
+      <div class="text-center">
+        <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+           Sign Up
+        </button></h6>
+      </div>
+    </form>
+      </div>
+    </body>
+  </div>
+  
+  <div *ngIf="div3">
+    <h2 style="text-align:center;" class="text-warning"><span>Machine Learning Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+      <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+  <form #loginform="ngForm" (ngSubmit)="loginUser3()">
+      <div class="form-outline mb-4">
+          <small class="text-danger">{{msg}}</small><br>
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+      </div>
+  
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+        <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+      </div>
+      <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <br><br>
+      <div class="text-center">
+        <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+           Sign Up
+        </button></h6>
+      </div>
+    </form>
+      </div>
+    </body>
+  </div>
+  <br>
+  <br>
+
+<!-- Project -->
+<h1 style="text-align:center;"><span>Project Login</span></h1>
+<br>
+      <div class="container-fluid justify-content-center">
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-md-6">
+              <div class="card bg-primary text-white fw-bold mb-4">
+                  <div class="card-body">Robotics</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                    <button  class="btn btn-outline-light" (click)="div4Function()">Login</button>
+                      <!-- <a class="small text-white stretched-link" href="adminprojects.html" routerLink="/adminprojects" routerLinkActive="active">View Details</a> -->
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white fw-bold mb-4">
+                <div class="card-body">Electronics</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                  <button type="button" class="btn btn-outline-light" (click)="div5Function()">Login</button>
+                    <!-- <a class="small text-white stretched-link" href="#admincourses">View Details</a> -->
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white fw-bold mb-4">
+                <div class="card-body">IOT</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                  <button type="button" class="btn btn-outline-light" (click)="div6Function()">Login</button>
+                    <!-- <a class="small text-white stretched-link" href="#adminworkshop">View Details</a> -->
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-xl-3 col-md-6">
+            <div class="card bg-danger text-white mb-4">
+                <div class="card-body">Web-Android App Development</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                  <button type="button" class="btn btn-outline-light" (click)="div4Function()">Login</button>-->  
+                  <!-- <a class="small text-white stretched-link" href="#adminkidzone">View Details</a> -->
+                    <!-- <div class="small text-white"><i class="fas fa-angle-right"></i></div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> --> 
+    </div>
+  </div>
+
+<!-- <div class="d-flex justify-content-center">
+    <div class="btn-group btn-group-lg  " role="group" aria-label="Large button group">
+      <button type="button" class="btn btn-outline-secondary"(click)="div4Function()">Robotics</button>
+      <button type="button" class="btn btn-outline-secondary"(click)="div5Function()">Electronics</button>
+      <button type="button" class="btn btn-outline-secondary"(click)="div6Function()">IOT</button>
+    </div>
+  </div> -->
+
+
+
+  <div *ngIf="div4">
+    <h2 style="text-align:center;" class="text-primary"><span>Robotics Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+      <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+  <form #loginform="ngForm" (ngSubmit)="loginUser4()">
+      <div class="form-outline mb-4">
+          <small class="text-danger">{{msg}}</small><br>
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+      </div>
+  
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+        <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+      </div>
+      <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <br><br>
+      <div class="text-center">
+        <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+           Sign Up
+        </button></h6>
+      </div>
+    </form>
+      </div>
+    </body>
+  </div>
+  
+  <div *ngIf="div5">
+    <h2 style="text-align:center;" class="text-primary"><span>Electronics Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+      <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+  <form #loginform="ngForm" (ngSubmit)="loginUser5()">
+      <div class="form-outline mb-4">
+          <small class="text-danger">{{msg}}</small><br>
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+      </div>
+  
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+        <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+      </div>
+      <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <br><br>
+      <div class="text-center">
+        <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+           Sign Up
+        </button></h6>
+      </div>
+    </form>
+      </div>
+    </body>
+  </div>
+  
+  <div *ngIf="div6">
+    <h2 style="text-align:center;" class="text-primary"><span>IOT Login</span></h2>
+    <body style="padding-top: 0px;
+        padding-right: 500px;
+        padding-bottom: 50px;
+        padding-left: 500px;" >
+      <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+  <form #loginform="ngForm" (ngSubmit)="loginUser6()">
+      <div class="form-outline mb-4">
+          <small class="text-danger">{{msg}}</small><br>
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+      </div>
+  
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+        <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+      </div>
+      <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <br><br>
+      <div class="text-center">
+        <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+           Sign Up
+        </button></h6>
+      </div>
+    </form>
+      </div>
+    </body>
+  </div>
+  <br>
+  <br>
+  
+       <!--Workshop--> 
+       <h1 style="text-align:center;" ><span>Workshop</span></h1><br>
+       <div class="container-fluid justify-content-center">
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-md-6">
+              <div class="card bg-success text-white fw-bold mb-4">
+                  <div class="card-body">Workshop</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                    <button  class="btn btn-outline-light" (click)="div7Function()">Login</button>
+                      <!-- <a class="small text-white stretched-link" href="adminprojects.html" routerLink="/adminprojects" routerLinkActive="active">View Details</a> -->
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+       <!-- <div  style=" float:left; width: 50px;margin-right: 0px;"> -->
+      <!-- <div class="d-flex justify-content-center">
+       <button  class="btn btn-outline-success" (click)="div7Function()">Workshop</button>
+       </div>
+       <br>
+       <br> -->
+
+       <div *ngIf="div7">
+        <h2 style="text-align:center;" class="text-success"><span>Workshop Login</span></h2>
+        <body style="padding-top: 0px;
+            padding-right: 500px;
+            padding-bottom: 50px;
+            padding-left: 500px;" >
+          <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+      <form #loginform="ngForm" (ngSubmit)="loginUser7()">
+          <div class="form-outline mb-4">
+              <small class="text-danger">{{msg}}</small><br>
+            <label class="form-label" for="form2Example1">Email address</label>
+            <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+          </div>
+      
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example2">Password</label>
+            <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+            <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+          </div>
+          <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+          <br><br>
+          <div class="text-center">
+            <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+               Sign Up
+            </button></h6>
+          </div>
+        </form>
+          </div>
+        </body>
+      </div>
+      <br>
+      <br>
+
+      <!--KidZone--> 
+      <h1 style="text-align:center;" ><span>Kidzone</span></h1><br>
+      <div class="container-fluid justify-content-center">
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-md-6">
+              <div class="card bg-danger text-white fw-bold mb-4">
+                  <div class="card-body">KidZone</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                    <button  class="btn btn-outline-light" (click)="div8Function()">Login</button>
+                      <!-- <a class="small text-white stretched-link" href="adminprojects.html" routerLink="/adminprojects" routerLinkActive="active">View Details</a> -->
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+
+      <!-- <div  style=" float:left; width: 50px;margin-right: 0px;"> -->
+     <!-- <div class="d-flex justify-content-center">
+      <button  class="btn btn-outline-danger" (click)="div8Function()">Kidzone</button>
+      </div> -->
+
+      <div *ngIf="div8">
+        <h2 style="text-align:center;" class="text-danger"><span>KidZone Login</span></h2>
+        <body style="padding-top: 0px;
+            padding-right: 500px;
+            padding-bottom: 50px;
+            padding-left: 500px;" >
+          <div class="container" style="background-color:white; padding: 25px 25px 0px 25px; border-radius: 15px;">      
+      <form #loginform="ngForm" (ngSubmit)="loginUser8()">
+          <div class="form-outline mb-4">
+              <small class="text-danger">{{msg}}</small><br>
+            <label class="form-label" for="form2Example1">Email address</label>
+            <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div> 
+          </div>
+      
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example2">Password</label>
+            <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+            <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>   
+          </div>
+          <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+          <br><br>
+          <div class="text-center">
+            <h6 class="not">Not a member? <br><button (click)="goToPage('register-main')" class="btn btn-primary btn-block mb-4" >
+               Sign Up
+            </button></h6>
+          </div>
+        </form>
+          </div>
+        </body>
+      </div>
+  
+  
