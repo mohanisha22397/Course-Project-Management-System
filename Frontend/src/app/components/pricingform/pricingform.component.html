@@ -1,1 +1,86 @@
+<div class="main justify-content-center">
+    <div class="container py-5 px-4">
+        <h1 class="display-5">Membership Fees</h1>
+    </div>
 
+    <div class="container bg-warning bg-opacity-25 justify-content-center">
+        <div class="form-outline"> 
+            <h3>Individual: ₹199/month </h3>
+            <h3>Pro: ₹449/month for 5 users</h3>
+            <h3>Institutional: ₹999/month </h3>
+            
+            <h5>SkillForge Account No. SF1002</h5>
+        </div>
+    </div>
+
+<div class="container" id="pricingform">
+    
+  <form>
+  
+    <div class="form-outline" > 
+    <label class="form-label" for="form2Example1">Enrollment No.</label>
+    <input type="text" id="form2Example1" placeholder="rollno" class="form-control" name="id" ngModel>
+  </div>
+  <br>
+
+  <div class="form-outline" > 
+  <label class="form-label" for="form2Example2" >First Name</label>
+  <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel>
+  </div>
+  <br>
+
+  <div class="form-outline" > 
+  <label class="form-label" for="form2Example3">Last Name</label>
+  <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
+  </div>
+  <br>
+  
+  <div class="form-outline" > 
+  <label class="form-label" for="form2Example4">Selected Module</label>
+  <input type="text" id="form2Example4" placeholder="module" class="form-control" name="module" ngModel>
+  </div>
+  <br>
+  
+  
+  <div class="form-outline" > 
+  <label class="form-label" for="form2Example7">Contact No</label>
+  <input type="text" id="form2Example7" placeholder="phoneno" class="form-control" name="phoneno" ngModel>
+  </div>
+  <br>
+  
+  
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example8">Payment Date</label>
+        <input type="date" id="form2Example8" placeholder="dd-mm-yyyy" class="form-control" name="date" ngModel>
+        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
+      </div>
+      <br>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example10">Payee Account No</label>
+        <input type="text" id="form2Example10" placeholder="Account No" class="form-control" name="accno" ngModel>
+        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
+    </div>
+    <br>
+
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example9">Payment Mode</label>
+      
+      <input type="text" id="form2Example9" placeholder="Gpay/other" class="form-control" name="paymentmode" ngModel>
+      <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
+    </div>
+    <br>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example11">Payable Amount</label>
+        <input type="text" id="form2Example11" placeholder="payable amount" class="form-control" name="memfees" ngModel>
+        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
+    </div>
+    <br>
+    <br>
+    
+    <button class=" btn btn-outline-primary" type="submit" routerLink="/payment" routerLinkActive="active" >Pay Now</button>
+    <br>
+  </form>
+    </div>
+</div>

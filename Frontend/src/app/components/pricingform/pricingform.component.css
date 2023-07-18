@@ -1,0 +1,21 @@
+#pricingform{
+    background-color:#fff;
+    padding: 15px 15px 60px 15px; 
+    border-radius: 15px;
+    width: 800px;
+    box-shadow: 0 0 8px  #cc7a00; 
+}
+
+h1{
+    text-align:center;
+    color: black;
+}
+
+h5{
+    text-align:center;
+    color:black;  
+
+}
+.form-outline{
+    width: 500px;
+}
