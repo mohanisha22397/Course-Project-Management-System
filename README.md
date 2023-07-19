@@ -1,2 +1,2 @@
 # Course-Project-Management-System
-This project includes an angular based frontend and springboot based backend. The frontend features HTML, CSS, BootStrap, TypeSecript and JavaScript. And the backend has spring based database application.
+This project includes an angular-based frontend and a spring boot-based backend. The front end features HTML, CSS, BootStrap, TypeScript, and JavaScript. And the backend has a spring-based database application.
